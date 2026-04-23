@@ -449,7 +449,7 @@ img {
   flex-wrap: nowrap;
 }
 .daily-entry:hover {
-  background-color: hsla(243, 36%, 46%, 0.778);
+  background-color: hsla(243, 33%, 47%, 0.778);
 }
 .daily-entry__temp {
   display: flex;
