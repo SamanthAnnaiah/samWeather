@@ -49,6 +49,15 @@ const dashboardSlice = createSlice({
     },
     loading: false,
     error: null,
+    ui: {
+      selectedDay: "",
+      selectedUnits: [],
+      weatherDisplay: null,
+      searchCardsVisible: false,
+      searchWord: "",
+      latlan: { latitude: null, longitude: null },
+      selectedLocation: null,
+    },
   },
   reducers: {
     setLocalGeoCodeData: (state, action) => {
@@ -56,6 +65,34 @@ const dashboardSlice = createSlice({
     },
     setLocalWeatherData: (state, action) => {
       state.data.weatherData = action.payload;
+    },
+    setSelectedDay: (state, action) => {
+      state.ui.selectedDay = action.payload;
+    },
+    setSelectedUnits: (state, action) => {
+      state.ui.selectedUnits = action.payload;
+    },
+    setWeatherDisplay: (state, action) => {
+      state.ui.weatherDisplay = action.payload;
+    },
+    setSearchCardsVisible: (state, action) => {
+      state.ui.searchCardsVisible = action.payload;
+    },
+    setSearchWord: (state, action) => {
+      state.ui.searchWord = action.payload;
+    },
+    setLatLan: (state, action) => {
+      state.ui.latlan = action.payload;
+    },
+    setSelectedLocation: (state, action) => {
+      state.ui.selectedLocation = action.payload;
+    },
+    resetSearchState: (state) => {
+      state.ui.searchCardsVisible = true;
+      state.ui.weatherDisplay = null;
+      state.ui.selectedLocation = null;
+      state.ui.latlan = { latitude: null, longitude: null };
+      state.data.geoCodeData = null;
     },
   },
   extraReducers: (builder) => {
@@ -89,6 +126,16 @@ const dashboardSlice = createSlice({
 });
 
 export default dashboardSlice.reducer;
-export const { setLocalGeoCodeData, setLocalWeatherData } =
-  dashboardSlice.actions;
+export const {
+  setLocalGeoCodeData,
+  setLocalWeatherData,
+  setSelectedDay,
+  setSelectedUnits,
+  setWeatherDisplay,
+  setSearchCardsVisible,
+  setSearchWord,
+  setLatLan,
+  setSelectedLocation,
+  resetSearchState,
+} = dashboardSlice.actions;
 export { getGeoCodeData, getWeatherData };
