@@ -19,6 +19,12 @@ export let weatherParams = {
     "temperature_2m",
     "relative_humidity_2m",
     "apparent_temperature",
+    "wind_speed_10m",
+    "wind_direction_10m",
+    "wind_gusts_10m",
+    "pressure_msl",
+    "surface_pressure",
+    "cloud_cover",
   ],
 };
 

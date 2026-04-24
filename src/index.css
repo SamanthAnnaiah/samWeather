@@ -459,3 +459,540 @@ img {
   font-size: 10px;
   gap: 20px;
 }
+
+/* ─── Error Page ────────────────────────────────────────────────────────────── */
+
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  width: 100%;
+}
+
+.error-page__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: hsl(243, 18%, 23%);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  padding: 48px 64px;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.error-page__logo img {
+  height: 40px;
+  width: auto;
+}
+
+.error-page__code {
+  font-family: var(--heading);
+  font-size: 96px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.error-page__title {
+  font-size: 24px !important;
+  letter-spacing: 1px !important;
+  margin: 0 !important;
+}
+
+.error-page__message {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.error-page__btn {
+  margin-left: 0 !important;
+  margin-top: 8px;
+  width: 120px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: none;
+  font-family: var(--mono);
+  cursor: pointer;
+}
+
+/* ─── Sea Dashboard ──────────────────────────────────────────────────────────── */
+
+.sea-dashboard {
+  padding: 8px 0 40px;
+}
+
+.sea-dashboard__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 80px 20px;
+  opacity: 0.45;
+  color: var(--text);
+}
+
+.sea-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 20px;
+}
+
+.sea-dashboard__header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sea-dashboard__title {
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+.sea-dashboard__location {
+  font-size: 0.78rem;
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.sea-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* ── Cards ── */
+
+.sea-card {
+  background: hsl(243, 18%, 21%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.sea-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.sea-card:hover {
+  border-color: rgba(192, 132, 252, 0.28);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.sea-card--large {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.sea-card--center {
+  align-items: center;
+}
+
+.sea-card__side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sea-card__gauge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sea-card__icon {
+  opacity: 0.9;
+}
+
+.sea-card__label {
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  opacity: 0.52;
+  font-weight: 600;
+}
+
+.sea-card__value {
+  font-size: 1.9rem;
+  font-weight: 600;
+  font-family: var(--heading);
+  color: var(--text-h);
+  line-height: 1.1;
+}
+
+.sea-card__unit {
+  font-size: 0.82rem;
+  font-weight: 400;
+  opacity: 0.62;
+}
+
+.sea-card__badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.sea-card__bar-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.sea-card__bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.7s ease;
+  min-width: 2px;
+}
+
+.sea-card__sub {
+  font-size: 0.74rem;
+  color: var(--text);
+  opacity: 0.5;
+}
+
+/* ─── Back Button ────────────────────────────────────────────────────────────── */
+
+.dash-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-family: var(--mono);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-h);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.dash-back-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 300ms ease;
+  border-radius: inherit;
+}
+
+.dash-back-btn:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: var(--accent-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.dash-back-btn:active {
+  transform: scale(0.95);
+}
+
+.dash-back-btn:active::after {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Dashboard Navigation Buttons ──────────────────────────────────────────── */
+
+.dash-nav-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 12px;
+  justify-content: flex-start;
+}
+
+.dash-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+  user-select: none;
+}
+
+/* ripple overlay */
+.dash-nav-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 300ms ease;
+  border-radius: inherit;
+}
+
+.dash-nav-btn:active::after {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dash-nav-btn:active {
+  transform: scale(0.95);
+}
+
+/* Sea button — blue-teal */
+.dash-nav-btn--sea {
+  background: linear-gradient(135deg, hsl(203, 80%, 35%), hsl(191, 72%, 40%));
+  color: #e0f7fa;
+  box-shadow:
+    0 4px 14px rgba(14, 165, 233, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.dash-nav-btn--sea:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(14, 165, 233, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  filter: brightness(1.1);
+}
+
+/* Wind button — green-teal */
+.dash-nav-btn--wind {
+  background: linear-gradient(135deg, hsl(160, 72%, 28%), hsl(148, 65%, 36%));
+  color: #d1fae5;
+  box-shadow:
+    0 4px 14px rgba(16, 185, 129, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dash-nav-btn--wind:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(16, 185, 129, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  filter: brightness(1.1);
+}
+
+/* ─── Wind Dashboard ─────────────────────────────────────────────────────────── */
+
+.wind-dashboard {
+  padding: 8px 0 40px;
+}
+
+.wind-dashboard__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 80px 20px;
+  opacity: 0.45;
+  color: var(--text);
+}
+
+.wind-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 20px;
+}
+
+.wind-dashboard__header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wind-dashboard__title {
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+.wind-dashboard__location {
+  font-size: 0.78rem;
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.wind-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* ── Wind Cards ── */
+
+.wind-card {
+  background: hsl(243, 18%, 21%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.wind-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.wind-card:hover {
+  border-color: rgba(52, 211, 153, 0.25);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.wind-card--large {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.wind-card--center {
+  align-items: center;
+}
+
+.wind-card__side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.wind-card__gauge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wind-card__icon {
+  opacity: 0.9;
+}
+
+.wind-card__label {
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  opacity: 0.52;
+  font-weight: 600;
+}
+
+.wind-card__value {
+  font-size: 1.9rem;
+  font-weight: 600;
+  font-family: var(--heading);
+  color: var(--text-h);
+  line-height: 1.1;
+}
+
+.wind-card__unit {
+  font-size: 0.82rem;
+  font-weight: 400;
+  opacity: 0.62;
+}
+
+.wind-card__badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.wind-card__bar-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.wind-card__bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.7s ease;
+  min-width: 2px;
+}
+
+.wind-card__sub {
+  font-size: 0.74rem;
+  color: var(--text);
+  opacity: 0.5;
+}
