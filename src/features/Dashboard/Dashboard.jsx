@@ -130,6 +130,7 @@ export function Dashboard() {
     );
     dispatch(setSelectedLocation(item));
     dispatch(setLatLan({ latitude, longitude }));
+    dispatch(setSearchCardsVisible(false));
   }
 
   function handleSearch() {
