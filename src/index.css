@@ -996,3 +996,255 @@ img {
   color: var(--text);
   opacity: 0.5;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1023px) + MOBILE (≤ 640px)
+   Desktop styles above are untouched. Overrides cascade down only.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Tablet: 641px – 1023px ──────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  #root {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 20px 0;
+  }
+
+  /* Search: wider field on tablet */
+  .search-field-wrapper {
+    width: 60%;
+  }
+
+  /* Weather display: reduce fixed height, let content breathe */
+  .weatherDisplay {
+    height: auto;
+    min-height: 0;
+    gap: 12px;
+  }
+
+  /* Sea / Wind dashboard: 2-column on tablet */
+  .sea-dashboard__grid,
+  .wind-dashboard__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sea-card--large,
+  .wind-card--large {
+    grid-column: span 2;
+  }
+}
+
+/* ── Mobile: ≤ 640px ─────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  #root {
+    padding: 0 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    margin: 16px 0;
+  }
+
+  h2 {
+    font-size: 17px;
+  }
+
+  /* ── Header bar ── */
+  .heading1 {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .heading1 img {
+    height: 26px;
+    width: auto;
+  }
+
+  .heading2 {
+    margin-top: -10px;
+  }
+
+  /* ── Search bar ── */
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .search-field-wrapper {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100% !important;
+    margin-left: 0 !important;
+    height: 44px;
+  }
+
+  /* ── Weather display: collapse grid → flex column ── */
+  .weatherDisplay {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    margin-top: 12px;
+    overflow: visible;
+  }
+
+  /* Each item loses its grid placement and becomes full-width */
+  .weatherDisplay__item1,
+  .weatherDisplay__item2,
+  .weatherDisplay__item3,
+  .weatherDisplay__item4 {
+    grid-column: unset;
+    grid-row: unset;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+  }
+
+  /* Current conditions card */
+  .weatherDisplay__item1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .weatherDisplay__item1__temp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .tempHead {
+    font-size: 44px;
+  }
+
+  /* Hourly forecast sidebar: fixed height + scroll */
+  .weatherDisplay__item2 {
+    max-height: 260px;
+    overflow-y: auto;
+  }
+
+  /* Stats row: wrap into 2-per-row pills */
+  .weatherDisplay__item3 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .weatherDisplay__item3 div {
+    width: calc(50% - 4px);
+    box-sizing: border-box;
+  }
+
+  /* Daily forecast row: horizontal scroll */
+  .weatherDisplay__item4 {
+    padding: 12px;
+  }
+
+  .weatherDisplay__item4__details {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-left: 0;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .daily-entry {
+    width: auto;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  .daily-entry__temp {
+    gap: 8px;
+  }
+
+  /* Hourly entries */
+  .hourly-entry {
+    padding: 6px 8px;
+  }
+
+  /* ── Dashboard nav buttons ── */
+  .dash-nav-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .dash-nav-btn {
+    flex: 1 1 calc(50% - 5px);
+    justify-content: center;
+    min-width: 130px;
+  }
+
+  /* ── Sea Dashboard ── */
+  .sea-dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sea-card--large {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sea-card__gauge {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* ── Wind Dashboard ── */
+  .wind-dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wind-card--large {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wind-card__gauge {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* ── Error page ── */
+  .error-page__card {
+    padding: 32px 20px;
+  }
+
+  .error-page__code {
+    font-size: 64px;
+  }
+
+  /* ── AutoSelector: full width on mobile ── */
+  .auto-selector {
+    width: 100%;
+  }
+
+  .auto-selector__input .MuiOutlinedInput-root {
+    width: 100% !important;
+    margin-left: 0;
+  }
+
+  /* ── Back button: full width on mobile ── */
+  .dash-back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
